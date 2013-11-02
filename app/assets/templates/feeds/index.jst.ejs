@@ -1,0 +1,15 @@
+<h2>RSS Feeds</h2>
+
+<button class="btn refresh">Refresh</button>
+<br>
+<br>
+<% feeds.forEach(function(feed){ %>
+	<a href="#/feeds/<%= feed.id %>"><%= feed.escape("title") %></a>
+	<% if (feed.get("liked")) { %>
+	<span>LIKED</span>
+	<% }; %>
+	<button class="btn like" data-id="<%= feed.id %>">Like</button>
+	<button class="btn btn-danger unlike" data-id="<%= feed.id %>">Unlike</button>
+	<br>
+	<br>
+<% }); %>
